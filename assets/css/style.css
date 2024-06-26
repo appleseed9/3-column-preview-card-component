@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/*
+    Fonts
+
+    Lexend Deca 400
+    Big Shoulders Display 700
+
+*/
+
+/*
+    Variables
+*/
+
+:root {
+    --font-size-base: 15px;
+
+    --box-background-color-sedan: hsl(31, 77%, 52%);
+    --box-background-color-suv: hsl(184, 100%, 22%);
+    --box-background-color-luxury: hsl(179, 100%, 13%);
+
+    --color-paragraph: hsla(0, 0%, 100%, 0.75);
+    --color-background: hsl(0, 0%, 95%); /* background, headings, button background */
+
+    --container-max-width-mobile: 327px;
+    --container-max-width-desktop: 920px;
+}
+
+/*
+    Reset
+*/
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+/* 
+    Base style
+*/
+
+html {
+    font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
+    font-size: var(--font-size-base); /* 15px */
+    color: var(--color-paragraph);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background: var(--color-background);
+}
+
+main {
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*
+    container
+*/
+
+.container {
+    max-width: var(--container-max-width-mobile);
+    border-radius: .55rem;
+    overflow: hidden;
+    margin: 88px auto;
+}
+
+/*
+    box block
+*/
+
+.box {
+    display: inline-block;
+    padding: 3.2rem;
+}
+
+.box--sedans {
+    background-color: var(--box-background-color-sedan);
+}
+
+.box--suvs {
+    background-color: var(--box-background-color-suv);
+}
+
+.box--luxury {
+    background-color: var(--box-background-color-luxury);
+}
+
+.box__icon {
+    display: block;
+    width: 64px;
+    height: 40px;
+
+    margin-bottom: 2.25rem;
+}
+
+.box__icon--sedans {
+    background-image: url("../images/icon-sedans.svg");
+}
+
+.box__icon--suvs {
+    background-image: url("../images/icon-suvs.svg");
+}
+
+.box__icon--luxury {
+    background-image: url("../images/icon-luxury.svg");
+}
+
+.box__title {
+    font-size: 2.7rem;
+    font-family: "Big Shoulders Display", Helvetica, Arial, sans-serif;
+    color: var(--color-background);
+    opacity: 90%;
+    text-transform: uppercase;
+
+    margin-bottom: 1.7rem;
+}
+
+.box__description {
+    font-size: 1rem;
+    font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
+    color: var(--color-paragraph);
+    opacity: 83%;
+    line-height: 1.65;
+
+    margin-bottom: 1.6rem;
+}
+
+/*
+    btn block
+*/
+
+.btn {
+    display:inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--color-background);
+    line-height: 3.2;
+    width: 9.667rem;
+    border-radius: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    box-sizing: content-box;
+    background-color: transparent;
+    outline: 2px solid var(--color-background);
+    color: var(--color-background);
+    opacity: 95%;
+    cursor: pointer;
+}
+
+.btn--sedans {
+    color: var(--box-background-color-sedan);
+}
+
+.btn--suvs {
+    color:var(--box-background-color-suv);
+}
+
+.btn--luxury {
+    color: var(--box-background-color-luxury);
+}
+
+.btn__text {
+    opacity: 75%;
+}
+
+/*
+    Large screen settings
+*/
+
+@media (min-width: 51.2em) {
+    .container {
+        max-width: var(--container-max-width-desktop);
+        margin-top: 171px;
+        margin-bottom: 129px;
+    }
+
+    .box {
+        max-width: 33%;
+        float: left;
+    }
+
+    .box__description {
+        margin-bottom: 5.5rem;
+    }
+}
+
